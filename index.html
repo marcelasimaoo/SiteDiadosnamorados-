@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feliz Dia dos Namorados 💖</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <button id="playPauseBtn" class="botao-musica">🎵 Tocar Música</button>
+  <audio id="musica" src="mp3.mp3" loop></audio>
+
+  <div class="mensagem-topo">
+    Feliz Dia dos Namorados, meu amor! 💘
+  </div>
+
+  <div class="container">
+    <h1>Te dedico esse cantinho especial só nosso 💞</h1>
+
+    <div class="foto-principal">
+      <img src="imagem.jpg.jpg" alt="Nosso momento especial" />
+    </div>
+
+    <button onclick="mostrarMensagem()">💌 Clique para ler uma mensagem</button>
+    <p id="mensagem-secreta" class="mensagem-oculta">
+      Você é o meu lugar favorito no mundo inteiro.  
+      Obrigada por me fazer tão feliz todos os dias.  
+      Eu te amo além das palavras! ❤️
+    </p>
+
+    <button onclick="iniciarChuvaDeAmor()">💕 Veja quanto eu te amo</button>
+    <div id="chuva" class="chuva-container"></div>
+
+    <button onclick="mostrarPresente()">🎁 Receba seu presente físico</button>
+    <div id="presente-container" class="presente-oculto">
+      <p class="presente-texto">
+        Nada se compara a ter o presente mais raro e precioso: <strong>sua namorada 💘</strong><br>
+        Mas... aqui está seu vale-presente físico!
+      </p>
+      <div class="cupom-animado">
+        🎫 CUPOM ESPECIAL: <span class="beijo">💋 Preciso de um beijinho 💋</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
