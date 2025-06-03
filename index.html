@@ -2,47 +2,53 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Feliz Dia dos Namorados 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para o Amor da Minha Vida 💖</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <audio id="musica" src="mp3.mp3" autoplay loop></audio>
 
-  <button id="playPauseBtn" class="botao-musica">🎵 Tocar Música</button>
-  <audio id="musica" src="mp3.mp3" loop></audio>
-
-  <div class="mensagem-topo">
-    Feliz Dia dos Namorados, meu amor! 💘
-  </div>
-
-  <div class="container">
-    <h1>Te dedico esse cantinho especial só nosso 💞</h1>
-
-    <div class="foto-principal">
-      <img src="imagem.jpg.jpg" alt="Nosso momento especial" />
+  <header class="topo">
+    <div class="botoes">
+      <button onclick="toggleMusica()">🎵 Música</button>
+      <button onclick="iniciarChuvaDeAmor()">❤️ Chuva de Amor</button>
+      <button onclick="mostrarMensagem()">💌 Mensagem</button>
+      <button onclick="abrirPortalDoAlasca()">🌌 Portal do Alasca</button>
     </div>
+  </header>
 
-    <button onclick="mostrarMensagem()">💌 Clique para ler uma mensagem</button>
-    <p id="mensagem-secreta" class="mensagem-oculta">
-      Você é o meu lugar favorito no mundo inteiro.  
-      Obrigada por me fazer tão feliz todos os dias.  
-      Eu te amo além das palavras! ❤️
-    </p>
+  <main class="conteudo">
+    <img src="imagem.jpg.jpg" alt="Foto do Casal" class="foto-casal" />
 
-    <button onclick="iniciarChuvaDeAmor()">💕 Veja quanto eu te amo</button>
-    <div id="chuva" class="chuva-container"></div>
+    <h1 class="titulo">Feliz Dia dos Namorados 💘</h1>
+    <p class="frase-principal">A distância pode medir 200km, mas o amor mede o infinito.</p>
 
-    <button onclick="mostrarPresente()">🎁 Receba seu presente físico</button>
-    <div id="presente-container" class="presente-oculto">
-      <p class="presente-texto">
-        Nada se compara a ter o presente mais raro e precioso: <strong>sua namorada 💘</strong><br>
-        Mas... aqui está seu vale-presente físico!
+    <section id="mensagem-secreta" class="oculto mensagem">
+      <p>Meu amor,</p>
+      <p>
+        Nem o mais preciso dos instrumentos de medição conseguiria dimensionar o quanto eu te amo.<br />
+        A metrologia pode medir milímetros, segundos e distâncias...<br />
+        Mas jamais medirá o amor imenso que sinto por você.<br />
+        Estamos a 200km de distância, mas meu coração vive do lado esquerdo do seu peito.<br />
+        Porque o que nos liga não são metros — é sentimento puro, real e eterno. 💗📏
       </p>
-      <div class="cupom-animado">
-        🎫 CUPOM ESPECIAL: <span class="beijo">💋 Preciso de um beijinho 💋</span>
+      <span class="assinatura">— Com amor, sua metrologuinha preferida 💖</span>
+    </section>
+
+    <section id="portal-alasca" class="oculto portal">
+      <h2>🌌 Bem-vindo ao Portal do Alasca ❄️</h2>
+      <p>O frio do Portal do Alasca, so serviu para um proposito, fez nascer o calor do nosso amor!</p>
+      <div id="presente" class="presente">
+        <h2>🎁 Vale-Presente Especial</h2>
+        <p>Você acaba de desbloquear um presente, por mais que já me tenha na sua vida, que sou o maior presente de todos 
+          : <br> <strong> Preciso de um beijinho, para receber o presente 🤗</strong> 💝</p>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
+
+  <div id="chuva"></div>
 
   <script src="script.js"></script>
 </body>

@@ -1,43 +1,55 @@
-const musica = document.getElementById("musica");
-const playPauseBtn = document.getElementById("playPauseBtn");
-let tocando = false;
-
-playPauseBtn.onclick = () => {
-  if (!tocando) {
-    musica.play();
-    playPauseBtn.textContent = "⏸️ Pausar Música";
+function toggleMusica() {
+  const audio = document.getElementById('musica');
+  if (audio.paused) {
+    audio.play();
   } else {
-    musica.pause();
-    playPauseBtn.textContent = "🎵 Tocar Música";
+    audio.pause();
   }
-  tocando = !tocando;
-};
-
-function mostrarMensagem() {
-  const mensagem = document.getElementById("mensagem-secreta");
-  mensagem.classList.toggle("mostrar");
 }
 
 function iniciarChuvaDeAmor() {
-  const chuva = document.getElementById("chuva");
-  chuva.classList.add("ativa");
+  const chuva = document.getElementById('chuva');
 
   setInterval(() => {
-    const frase = document.createElement("div");
-    frase.textContent = "eu te amo 💖";
-    frase.classList.add("frase-amor");
-    frase.style.left = `${Math.random() * 100}vw`;
-    frase.style.fontSize = `${Math.random() * 20 + 10}px`;
-    frase.style.animationDuration = `${Math.random() * 3 + 3}s`;
-    chuva.appendChild(frase);
+    const coracao = document.createElement('span');
+    coracao.className = 'coração-caindo';
+    coracao.innerText = Math.random() < 0.5 ? "❤️" : "💖";
+
+    coracao.style.position = "absolute";
+    coracao.style.left = Math.random() * 100 + "vw";
+    coracao.style.top = "-30px";
+    coracao.style.fontSize = (Math.random() * 20 + 24) + "px";
+    coracao.style.animation = "cair 5s linear forwards";
+    coracao.style.opacity = "0.9";
+    coracao.style.zIndex = "1000";
+    coracao.style.pointerEvents = "none";
+
+    chuva.appendChild(coracao);
 
     setTimeout(() => {
-      frase.remove();
+      coracao.remove();
     }, 6000);
-  }, 120);
+  }, 300);
 }
 
-function mostrarPresente() {
-  const presente = document.getElementById("presente-container");
-  presente.classList.toggle("mostrar");
+
+function esconderTodos() {
+  document.getElementById('mensagem-secreta').classList.add('oculto');
+  document.getElementById('portal-alasca').classList.add('oculto');
+}
+
+
+function mostrarMensagem() {
+  esconderTodos();
+  const mensagem = document.getElementById('mensagem-secreta');
+  mensagem.classList.remove('oculto');
+  mensagem.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+
+function abrirPortalDoAlasca() {
+  esconderTodos();
+  const portal = document.getElementById('portal-alasca');
+  portal.classList.remove('oculto');
+  portal.scrollIntoView({ behavior: "smooth", block: "center" });
 }
